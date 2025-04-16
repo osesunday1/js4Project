@@ -1,0 +1,50 @@
+export const dummyProject = [
+    {
+      "_id": "62624525sg7ss6",
+      "projectTitle": "To Do List APP",
+      "description": "This APP is a to do list app that helps individuals with their task",
+      "Teck Stack": "React JS, Mongo DB, NodeJS, ExpressJS",
+      "video": "https://www.youtube.com/watch?v=QHx4TGuv_Io",
+      "photo": "https://img.youtube.com/vi/QHx4TGuv_Io/maxresdefault.jpg",
+    },
+    {
+      "_id": "62624525sg7ss7",
+      "projectTitle": "Quiz Application",
+      "description": "An interactive quiz app with timed questions and scoring system to test user knowledge.",
+      "Teck Stack": "React JS, useReducer, Lottie Animations, Vercel",
+      "video": "https://www.youtube.com/watch?v=J8s6q_ZvUM0",
+      "photo": "https://img.youtube.com/vi/J8s6q_ZvUM0/maxresdefault.jpg",
+    },
+    {
+      "_id": "62624525sg7ss8",
+      "projectTitle": "Blog Platform",
+      "description": "A full-stack blog where users can create, edit, and delete blog posts with a secure backend.",
+      "Teck Stack": "React JS, NodeJS, MongoDB, Express",
+      "video": "https://www.youtube.com/watch?v=MxEtxo_AaZ4",
+      "photo": "https://img.youtube.com/vi/MxEtxo_AaZ4/maxresdefault.jpg",
+    },
+    {
+      "_id": "62624525sg7ss9",
+      "projectTitle": "Admin Dashboard",
+      "description": "Enterprise-level dashboard with charts, tables, and calendar scheduling system.",
+      "Teck Stack": "React JS, Material UI, FullCalendar, Nivo Charts",
+      "video": "https://www.youtube.com/watch?v=wYpCWwD1oz0",
+      "photo": "https://img.youtube.com/vi/wYpCWwD1oz0/maxresdefault.jpg",
+    },
+    {
+      "_id": "62624525sg7ss10",
+      "projectTitle": "Travel Planner App",
+      "description": "Helps users organize and manage travel itineraries with checklists and notes.",
+      "Teck Stack": "React JS, Local Storage, Styled Components",
+      "video": "https://www.youtube.com/watch?v=FHTbsZEJspU",
+      "photo": "https://img.youtube.com/vi/FHTbsZEJspU/maxresdefault.jpg",
+    },
+    {
+      "_id": "62624525sg7ss11",
+      "projectTitle": "Portfolio Website",
+      "description": "A personal portfolio showcasing projects and resume with interactive animations.",
+      "Teck Stack": "React JS, Framer Motion, CSS Modules",
+      "video": "https://www.youtube.com/watch?v=x7mwVn2z3Sk",
+      "photo": "https://img.youtube.com/vi/x7mwVn2z3Sk/maxresdefault.jpg",
+    }
+  ];
