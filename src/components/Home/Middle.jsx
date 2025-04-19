@@ -149,7 +149,7 @@ const Middle = () => {
     ScrollReveal().reveal('.sec-02', {
       distance: '60px',
       duration: 2500,
-      delay: 400,
+      delay: 200,
       reset: false,
       origin: 'left',
     });
@@ -157,7 +157,7 @@ const Middle = () => {
     ScrollReveal().reveal('.sec-02 .SectionTitle', {
       distance: '100px',
       duration: 2500,
-      delay: 500,
+      delay: 200,
       origin: 'right',
     });
 
@@ -171,28 +171,28 @@ const Middle = () => {
     ScrollReveal().reveal('.sec-02 .Info2', {
       distance: '50px',
       duration: 2500,
-      delay: 700,
+      delay: 200,
       origin: 'bottom',
     });
 
     ScrollReveal().reveal('.sec-03 .SectionTitle', {
       distance: '100px',
       duration: 2500,
-      delay: 500,
+      delay: 200,
       origin: 'left',
     });
 
     ScrollReveal().reveal('.sec-03 .MediaInfo', {
       distance: '50px',
       duration: 2500,
-      delay: 600,
+      delay: 300,
       origin: 'bottom',
     });
 
     ScrollReveal().reveal('.sec-03 .ImageWrapper', {
       distance: '50px',
       duration: 2500,
-      delay: 700,
+      delay: 300,
       origin: 'right',
     });
   }, []);

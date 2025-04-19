@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { dummyProject } from "../../assets/assets";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const Grid = styled.div`
   display: flex;
   gap: 2rem;
-  flex-direction:row;
-  flex-wrap:wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding: 2rem;
-  margin:auto;
+  margin: auto;
   justify-content: center;
-  background:#6a0dad;
 `;
 
 const Card = styled.div`
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  max-width: 350px;
+  width: 300px;
   transition: transform 0.3s;
 
   &:hover {
@@ -27,24 +27,25 @@ const Card = styled.div`
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-`;
-
 const Content = styled.div`
-  padding: 1rem;
+  padding: 1.5rem;
 `;
 
 const Title = styled.h3`
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #6a0dad;
 `;
 
 const Description = styled.p`
   font-size: 0.9rem;
   color: #555;
+  margin-bottom: 0.75rem;
+`;
+
+const TechStack = styled.p`
+  font-size: 0.8rem;
+  color: #888;
 `;
 
 const Button = styled.button`
@@ -57,22 +58,39 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const ProjectList = () => {
+const ProjectList = ({ searchQuery }) => {
   const navigate = useNavigate();
+  const [projects, setProjects] = useState([]);
 
-  const handleClick = (project) => {
-    navigate(`/projects/${project._id}`, { state: project });
-  };
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const querySnapshot = await getDocs(collection(db, "projects"));
+      const projectData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        _id: doc.id,
+      }));
+      setProjects(projectData);
+    };
+
+    fetchProjects();
+  }, []);
+
+  const filteredProjects = projects.filter((project) =>
+    project?.projectTitle?.toLowerCase().includes(searchQuery?.toLowerCase() || "") ||
+    project?.TeckStack?.toLowerCase().includes(searchQuery?.toLowerCase() || "")
+  );
 
   return (
     <Grid>
-      {dummyProject.map(project => (
+      {filteredProjects.map((project) => (
         <Card key={project._id}>
-          <Image src={project.photo} alt={project.projectTitle} />
           <Content>
             <Title>{project.projectTitle}</Title>
             <Description>{project.description}</Description>
-            <Button onClick={() => handleClick(project)}>View Details</Button>
+            <TechStack><strong>Stack:</strong> {project.TeckStack}</TechStack>
+            <Button onClick={() => navigate(`/projects/${project._id}`, { state: project })}>
+              View Details
+            </Button>
           </Content>
         </Card>
       ))}

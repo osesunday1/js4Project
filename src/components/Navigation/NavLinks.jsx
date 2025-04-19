@@ -74,7 +74,7 @@ const NavLinks = () => {
         <StyledNavLink scrolled={scrolled} to="/projects" activeClassName="active">PROJECTS</StyledNavLink>
       </StyledNavLinkItem>
       <StyledNavLinkItem>
-        <StyledNavLink  scrolled={scrolled} to="/contact" activeClassName="active">CONTACT</StyledNavLink>
+        <StyledNavLink  scrolled={scrolled} to="/auth" activeClassName="active">ADMIN</StyledNavLink>
       </StyledNavLinkItem>
     </StyledNavLinks>
   );

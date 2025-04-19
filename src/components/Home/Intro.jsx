@@ -173,7 +173,7 @@ const Intro = () => {
         ScrollReveal().reveal('.sec-01', {
           distance: '60px',
           duration: 2500,
-          delay: 400,
+          delay: 100,
           reset: false,
           origin: 'bottom'
         });
@@ -181,14 +181,14 @@ const Intro = () => {
         ScrollReveal().reveal('.sec-01 h2', {
           distance: '100px',
           duration: 2500,
-          delay: 500,
+          delay: 200,
           origin: 'left'
         });
     
         ScrollReveal().reveal('.sec-01 img', {
           distance: '60px',
           duration: 2500,
-          delay: 600,
+          delay: 200,
           origin: 'right'
         });
 

@@ -3,9 +3,9 @@ import { FaFacebook, FaInstagram, FaSnapchatGhost, FaTwitter } from "react-icons
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-    background-color: var(--blue4);
-    color: var(--blueText2);
-    padding: 0;
+    background: #f9fafb;
+    color: white;
+    
     text-align: center;
 `;
 
@@ -14,6 +14,8 @@ const FooterContent = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 20px;
+    background:var(--purple0);
+    padding: 2em 0px 0px 0px;
 `;
 
 const FooterSection = styled.div`
@@ -23,7 +25,6 @@ const FooterSection = styled.div`
 
     h4 {
         font-size: 18px;
-        margin-bottom: 5px;
         color: var(--red-color);
     }
 
@@ -90,35 +91,23 @@ const Footer = () => {
             <FooterContent>
                 <FooterSection>
                     <h4>About Us</h4>
-                    <p>We are dedicated to providing awareness on male breast cancer in Canada.</p>
+                    <p>We are dedicated to providing the best software applications in in Canada.</p>
                 </FooterSection>
                 <FooterSection>
                     <h4>Contact Information</h4>
-                    <p>Email: botani@gmail.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                    <p>Address: 123 Fanshawe Street, London, ON, Canada</p>
+                    <p>Email: grahouglo@gmail.com</p>
+                    <p>Phone: 2263867007</p>
                 </FooterSection>
                 <FooterSection>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><NavLink to='/home'>Home</NavLink></li>
                         <li><NavLink to='/about'>About Us</NavLink></li>
-                        <li><NavLink to='/guidelines'>Contact</NavLink></li>
+                        <li><NavLink to='/projects'>Projects</NavLink></li>
                     </ul>
                 </FooterSection>
-                <FooterSection>
-                    <h4>Follow Us</h4>
-                    <SocialIcons>
-                        <a href="#"><FaFacebook /></a>
-                        <a href="#"><FaTwitter /></a>
-                        <a href="#"><FaInstagram /></a>
-                        <a href="#"><FaSnapchatGhost /></a>
-                    </SocialIcons>
-                </FooterSection>
+                
             </FooterContent>
-            <FooterBottom>
-                <p>&copy; 2024 Botani. All rights reserved.</p>
-            </FooterBottom>
         </FooterContainer>
     );
 };

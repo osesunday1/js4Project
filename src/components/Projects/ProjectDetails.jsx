@@ -4,19 +4,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   max-width: 800px;
-  margin: 3rem auto;
+  margin: 10rem auto;
   padding: 2rem;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-`;
-
-const Image = styled.img`
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h1`
@@ -33,14 +25,20 @@ const Tech = styled.p`
   color: var(--purple0, #6a0dad);
 `;
 
-const VideoLink = styled.a`
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #ef4444;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
+const VideoWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 `;
 
 const ProjectDetails = () => {
@@ -52,17 +50,29 @@ const ProjectDetails = () => {
     return null;
   }
 
-  const { projectTitle, description, TeckStack, video, photo } = state;
+  const { projectTitle, description, TeckStack, video } = state;
+
+  const getYouTubeEmbedURL = (url) => {
+    const match = url.match(/v=([^&]+)/);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : "";
+  };
 
   return (
     <Wrapper>
-      <Image src={photo} alt={projectTitle} />
       <Title>{projectTitle}</Title>
       <Description>{description}</Description>
       <Tech>Tech Stack: {TeckStack}</Tech>
-      <VideoLink href={video} target="_blank" rel="noopener noreferrer">
-        🎬 Watch Demo
-      </VideoLink>
+
+      {video && (
+        <VideoWrapper>
+          <iframe
+            src={getYouTubeEmbedURL(video)}
+            title="Project Demo Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </VideoWrapper>
+      )}
     </Wrapper>
   );
 };
