@@ -16,7 +16,8 @@ const Section = styled.section`
   border-radius: 1rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  border-bottom: 4px solid #c084fc; /* Tailwind's primary-100 equivalent */
+  border-bottom: 4px solid rgb(87, 7, 167); 
+  border-top: 4px solid rgb(87, 7, 167);
 `;
 
 const Heading = styled.h1`
@@ -42,6 +43,7 @@ const TeamGrid = styled.div`
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-top: 2rem;
+  
 `;
 
 const TeamCard = styled.div`
@@ -51,6 +53,8 @@ const TeamCard = styled.div`
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: box-shadow 0.3s ease;
+  border: 2px solidrgb(109, 21, 197)
+  
 
   &:hover {
     box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.15);
@@ -58,7 +62,7 @@ const TeamCard = styled.div`
 `;
 
 const Avatar = styled.img`
-  border-radius: 9999px;
+  border-radius: 10px;
   width: 196px;
   height: 196px;
   object-fit: cover;
@@ -88,6 +92,11 @@ const About = () => {
       role: "Software Developer",
       img: "https://i.postimg.cc/BbZjcVys/ose.jpg",
     },
+    {
+      name: "Yuvraj Singh",
+      role: "Front End Developer",
+      img: "https://i.postimg.cc/FsWLGhN6/Whats-App-Image-2025-04-03-at-16-20-54.jpg",
+    },
   ];
 
   return (
@@ -95,7 +104,7 @@ const About = () => {
       <Wrapper>
         {/* Intro */}
         <Section>
-          <Heading>About GRAHOUGLO</Heading>
+          <Heading>GRAHOUGLO</Heading>
           <Paragraph>
           We are a team of passionate developers, designers, and strategists committed to building technology solutions that empower businesses and enrich lives.
           </Paragraph>
@@ -103,7 +112,7 @@ const About = () => {
 
         {/* Mission */}
         <Section>
-          <SubHeading>🌍 Our Mission</SubHeading>
+          <SubHeading>Vision</SubHeading>
           <Paragraph>
           To deliver cutting-edge digital solutions that solve real-world problems, drive growth, and create meaningful impact.
           </Paragraph>
