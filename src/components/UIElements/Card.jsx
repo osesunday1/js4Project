@@ -14,6 +14,9 @@ const CardContainer = styled.div`
   color: var(--purple0);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   transition: all 0.3s ease-in-out;
+  onhover:pointer;
+  border-bottom: 4px solid rgb(87, 7, 167); 
+  border-top: 4px solid rgb(87, 7, 167);
 
   h3 {
         color: var(--purple0) !important;
