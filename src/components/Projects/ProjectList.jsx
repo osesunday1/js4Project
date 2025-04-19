@@ -12,6 +12,7 @@ const Grid = styled.div`
   padding: 2rem;
   margin: auto;
   justify-content: center;
+  height:350px;
 `;
 
 const Card = styled.div`
@@ -20,7 +21,12 @@ const Card = styled.div`
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
+  height: 100%; /* Optional if you're using flex properly */
   transition: transform 0.3s;
+  border-bottom: 4px solid rgb(87, 7, 167);
+  border-top: 4px solid rgb(87, 7, 167);
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     transform: translateY(-10px);
@@ -29,6 +35,9 @@ const Card = styled.div`
 
 const Content = styled.div`
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 `;
 
 const Title = styled.h3`
@@ -49,7 +58,7 @@ const TechStack = styled.p`
 `;
 
 const Button = styled.button`
-  margin-top: 1rem;
+  margin-top: auto;
   padding: 0.5rem 1rem;
   background: var(--purple0, #6a0dad);
   color: #fff;
